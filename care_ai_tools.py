@@ -6,10 +6,6 @@ import firebase_admin
 from typing import List, Union
 
 
-DB_URL = "https://care-ai-iomt-default-rtdb.firebaseio.com/"
-ACCESS_JSON = "./care-ai-iomt-firebase-adminsdk-zwgsr-a23c87e4ec.json"
-
-
 def initiate_firebase_app(database_url, access_json):
     cred = credentials.Certificate(access_json)
     firebase_admin.initialize_app(cred, {"databaseURL": database_url})

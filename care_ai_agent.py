@@ -1,7 +1,3 @@
-import os
-import openai
-from dotenv import load_dotenv
-
 from langchain.agents import AgentExecutor
 from langchain_openai import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
@@ -12,9 +8,6 @@ from langchain.schema.runnable import RunnablePassthrough
 from langchain_core.utils.function_calling import convert_to_openai_function
 from langchain.agents.format_scratchpad import format_to_openai_functions
 from langchain.agents.output_parsers import OpenAIFunctionsAgentOutputParser
-
-load_dotenv(dotenv_path="openai.env")
-openai.api_key = os.getenv("OPENAI_API_KEY")
 
 
 def get_openai_agent(tools: list, model_name="gpt-3.5-turbo-0125") -> AgentExecutor:

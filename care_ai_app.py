@@ -1,12 +1,15 @@
+# import os
+import json
+import openai
 import streamlit as st
 from care_ai_tools import (
-    DB_URL,
-    ACCESS_JSON,
     initiate_firebase_app,
     get_patient_temperature,
     get_patient_spo2,
     get_patient_pulse_or_pulse_rate,
 )
+
+# from dotenv import load_dotenv
 from care_ai_agent import get_openai_agent
 
 
@@ -15,7 +18,9 @@ st.title("Care AI")
 if ("is_firebase_initialized" not in st.session_state) or (
     not st.session_state.is_firebase_initialized
 ):
-    initiate_firebase_app(DB_URL, ACCESS_JSON)
+    # load_dotenv(dotenv_path="openai.env")
+    openai.api_key = st.secrets("openai_api_key")
+    initiate_firebase_app(st.secrets["db_url"], json.loads(st.secrets["db_json"]))
     st.session_state.is_firebase_initialized = True
 
 if st.button("Reset History"):
