@@ -20,7 +20,9 @@ if ("is_firebase_initialized" not in st.session_state) or (
 ):
     # load_dotenv(dotenv_path="openai.env")
     openai.api_key = st.secrets["openai_api_key"]
-    initiate_firebase_app(st.secrets["db_url"], json.loads(st.secrets["db_json"]))
+    json_dict = json.loads(st.secrets["db_json"])
+    print(json_dict)
+    initiate_firebase_app(st.secrets["db_url"], json_dict)
     st.session_state.is_firebase_initialized = True
 
 if st.button("Reset History"):
