@@ -3,6 +3,13 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Secrets
+*.json
+*.env
+
+# Workspace files
+*.code-workspace
+
 # C extensions
 *.so
 
