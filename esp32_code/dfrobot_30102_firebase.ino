@@ -4,11 +4,11 @@
 
 #include "DFRobot_BloodOxygen_S.h"
 
-#define WIFI_SSID "Pixel_5879"
-#define WIFI_PASSWORD "ChahteKyaHo"
+#define WIFI_SSID "<YOUR SSID>"
+#define WIFI_PASSWORD "<YOUR PASSWORD>"
 
-#define FIREBASE_HOST "https://care-ai-iomt-default-rtdb.firebaseio.com/"
-#define FIREBASE_AUTH "AIzaSyACrscL_lzF_cEvgFAox_cXrYKlLY0Ue_s"
+#define FIREBASE_HOST "<YOUR FIREBASE DB URL>"
+#define FIREBASE_AUTH "<YOUR DB SECRET>"
 
 Firebase firebase(FIREBASE_HOST);
 
