@@ -1,16 +1,16 @@
 import os
 import openai
 import streamlit as st
-from .src.care_ai_tools import (
+from src.care_ai_tools import (
     initiate_firebase_app,
     get_patient_temperature,
     get_patient_spo2,
     get_patient_pulse_or_pulse_rate,
 )
 
-# from .src.constants import DB_URL, ACCESS_JSON
+# from src.constants import DB_URL, ACCESS_JSON
 # from dotenv import load_dotenv
-from .src.care_ai_agent import get_openai_agent
+from src.care_ai_agent import get_openai_agent
 
 
 st.title("Care AI")
