@@ -8,7 +8,9 @@ from typing import List, Union
 
 def initiate_firebase_app(database_url, access_json):
     cred = credentials.Certificate(access_json)
-    firebase_admin.initialize_app(cred, {"databaseURL": database_url})
+    firebase_admin.initialize_app(
+        cred, {"databaseURL": database_url}, name=str(datetime.now())
+    )
 
 
 class PatientTempInput(BaseModel):
