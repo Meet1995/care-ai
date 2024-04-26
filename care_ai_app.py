@@ -1,15 +1,15 @@
 import os
 import openai
 import streamlit as st
-from src.care_ai_tools import (
+from .care_ai.care_ai_tools import (
     initiate_firebase_app,
     get_patient_temperature,
     get_patient_spo2,
     get_patient_pulse_or_pulse_rate,
 )
 
-# from src.constants import DB_URL, ACCESS_JSON
 # from dotenv import load_dotenv
+# from src.constants import DB_URL, ACCESS_JSON
 from src.care_ai_agent import get_openai_agent
 
 
@@ -20,8 +20,8 @@ if "is_firebase_initialized" not in st.session_state:
     # load_dotenv(dotenv_path="openai.env")
     openai.api_key = os.getenv("OPENAI_API_KEY")
     try:
-        initiate_firebase_app(st.secrets["db_url"], dict(st.secrets["firebase_creds"]))
         # initiate_firebase_app(DB_URL, ACCESS_JSON)
+        initiate_firebase_app(st.secrets["db_url"], dict(st.secrets["firebase_creds"]))
     except ValueError:
         print("Firebase app already initialized!")
 
