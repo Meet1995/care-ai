@@ -5,9 +5,8 @@ The care-ai repository, developed by Meet1995, is a GPT-based smart agent that c
 ## 🌟 Main Features
 - Real-time Data Retrieval 🔄: The smart agent can connect to Firebase to fetch patient data in real-time.
 - Health Information Summarization 📊: It can summarize health information, providing a concise overview of a patient’s health status.
-  
-## 💻 Technologies Used
-The project is implemented using Python and utilizes GPT for natural language processing tasks and Firebase for real-time data handling.
 
 ## 🚀 How to Use
-You can clone the repository and install the necessary dependencies as listed in the requirements.txt file. After setting up, you can run the `care_ai_agent.py` or `care_ai_app.py` to start the application.
+You can clone the repository and install the necessary dependencies as listed in the requirements.txt file. After setting up, you can run the `care_ai_app.py` using streamlit to start the application. To run the application, you will need:
+- Openai API Key
+- Firebase real-time database access key
